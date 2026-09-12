@@ -141,34 +141,34 @@ export const Navbar = () => {
             </button>
 
             {/* Brand Logo */}
-            <Link to="/" className="flex flex-col items-start select-none group">
-              <span className="font-cinzel text-2xl sm:text-3xl font-bold tracking-[0.25em] text-slate-100 group-hover:text-amber-300 transition-colors">
-                A U R A
+            <Link to="/" className="flex flex-col items-start select-none group shrink-0 whitespace-nowrap pr-2">
+              <span className="font-cinzel text-xl sm:text-2xl lg:text-3xl font-bold tracking-[0.2em] text-slate-100 group-hover:text-amber-300 transition-colors whitespace-nowrap">
+                AURA
               </span>
-              <span className="text-[9px] uppercase tracking-[0.35em] text-amber-400 font-semibold -mt-1">
+              <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.35em] text-amber-400 font-semibold -mt-0.5 whitespace-nowrap">
                 Luxe Editions
               </span>
             </Link>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex items-center gap-7">
+            <div className="hidden lg:flex items-center gap-3.5 xl:gap-6 shrink-0">
               {navCategories.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="text-xs uppercase tracking-widest font-medium text-slate-300 hover:text-amber-300 transition-colors py-2 relative group"
+                  className="text-[11px] xl:text-xs uppercase tracking-wider xl:tracking-widest font-medium text-slate-300 hover:text-amber-300 transition-colors py-2 relative group whitespace-nowrap"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-amber-400 transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-amber-400 to-yellow-300 transition-all duration-300 group-hover:w-full" />
                 </Link>
               ))}
             </div>
 
             {/* Right Action Icons: Search, Wishlist, Account, Cart */}
-            <div className="flex items-center gap-2 sm:gap-4">
+            <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 shrink-0">
               
               {/* Live Search Bar */}
-              <div ref={searchRef} className="relative hidden md:block w-64 lg:w-72">
+              <div ref={searchRef} className="relative hidden md:block w-44 lg:w-52 xl:w-64">
                 <form onSubmit={handleSearchSubmit} className="relative">
                   <input
                     type="text"
@@ -176,7 +176,7 @@ export const Navbar = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => searchQuery.trim() && setShowSearchDropdown(true)}
                     placeholder="Search timepieces, audio..."
-                    className="w-full bg-aura-850 border border-slate-700/80 rounded-full pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-amber-400/80 focus:ring-1 focus:ring-amber-400/40 transition-all"
+                    className="w-full bg-aura-850/80 border border-slate-700/80 rounded-full pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-amber-400/80 focus:ring-1 focus:ring-amber-400/40 transition-all"
                   />
                   <Search className="absolute left-3 top-2.5 w-4 h-4 text-slate-400" />
                 </form>

@@ -4,26 +4,26 @@
 
 @layer base {
   body {
-    @apply bg-[#070A0F] text-slate-100 font-sans min-h-screen overflow-x-hidden;
+    @apply bg-[#06090E] text-slate-100 font-sans min-h-screen overflow-x-hidden antialiased;
     background-image: 
-      radial-gradient(at 15% 15%, rgba(212, 175, 55, 0.06) 0px, transparent 45%),
-      radial-gradient(at 85% 85%, rgba(180, 130, 40, 0.05) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, rgba(15, 23, 42, 0.4) 0px, transparent 100%);
+      radial-gradient(at 15% 10%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
+      radial-gradient(at 85% 90%, rgba(197, 160, 89, 0.06) 0px, transparent 55%),
+      radial-gradient(at 50% 50%, rgba(13, 18, 29, 0.6) 0px, transparent 100%);
     background-attachment: fixed;
   }
 
   /* Custom luxury scrollbar */
   ::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #070A0F;
+    background: #06090E;
   }
   ::-webkit-scrollbar-thumb {
     background: #1E293B;
-    border-radius: 4px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 9999px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #D4AF37;
@@ -33,11 +33,11 @@
 @layer components {
   /* Ultra-Aesthetic Gold Metallic Button with Shimmer */
   .btn-gold {
-    @apply relative inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold tracking-[0.15em] text-black uppercase transition-all duration-500 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37] bg-[length:200%_auto] rounded-xl shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:shadow-[0_0_35px_rgba(212,175,55,0.45)] hover:bg-[position:right_center] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+    @apply relative inline-flex items-center justify-center px-6 py-3 text-xs font-bold tracking-[0.16em] text-black uppercase transition-all duration-300 bg-gradient-to-r from-[#D4AF37] via-[#F5E7B2] to-[#D4AF37] bg-[length:200%_auto] rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:shadow-[0_6px_30px_rgba(212,175,55,0.5)] hover:bg-[position:right_center] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
   }
 
   .btn-outline-gold {
-    @apply relative inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold tracking-[0.15em] text-amber-300 uppercase transition-all duration-300 border border-amber-500/40 rounded-xl bg-amber-500/5 hover:bg-amber-500/15 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] active:scale-[0.98] disabled:opacity-50;
+    @apply relative inline-flex items-center justify-center px-6 py-3 text-xs font-bold tracking-[0.16em] text-amber-300 uppercase transition-all duration-300 border border-amber-500/40 rounded-xl bg-amber-500/5 hover:bg-amber-500/15 hover:border-amber-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.25)] active:scale-[0.98] disabled:opacity-50;
   }
 
   .btn-ghost {
@@ -46,32 +46,32 @@
 
   /* Luxury Glassmorphism Panel */
   .glass-panel {
-    @apply bg-[#0D121D]/80 backdrop-blur-xl border border-slate-800/80 shadow-[0_20px_50px_rgba(0,0,0,0.6)];
+    @apply bg-[#0B0F17]/85 backdrop-blur-xl border border-slate-800/80 shadow-[0_20px_50px_rgba(0,0,0,0.7)];
     box-shadow: 
-      inset 0 1px 0 rgba(255, 255, 255, 0.05),
-      0 20px 50px rgba(0, 0, 0, 0.6);
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 20px 50px rgba(0, 0, 0, 0.7);
   }
 
   /* Luxury Glassmorphism Card with Metallic Glow on Hover */
   .glass-card {
-    @apply bg-[#0D121D]/70 backdrop-blur-md border border-slate-800/60 rounded-2xl transition-all duration-500;
+    @apply bg-[#0B0F17]/75 backdrop-blur-md border border-slate-800/70 rounded-2xl transition-all duration-500;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
   .glass-card:hover {
     @apply border-amber-500/50 -translate-y-1.5;
     box-shadow: 
-      0 25px 45px -10px rgba(0, 0, 0, 0.7),
-      0 0 25px rgba(212, 175, 55, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 25px 45px -10px rgba(0, 0, 0, 0.8),
+      0 0 25px rgba(212, 175, 55, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
   }
 
   /* Liquid Gold Gradient Typography */
   .gold-gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FFF8DC] via-[#E5C07B] to-[#D4AF37];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FFFDF0] via-[#E8C574] to-[#D4AF37];
   }
 
   .gold-border-glow {
-    border-image: linear-gradient(to right, rgba(212, 175, 55, 0.6), rgba(243, 229, 171, 0.3), rgba(212, 175, 55, 0.6)) 1;
+    border-image: linear-gradient(to right, rgba(212, 175, 55, 0.6), rgba(245, 231, 178, 0.3), rgba(212, 175, 55, 0.6)) 1;
   }
 
   .badge-tag {
@@ -85,5 +85,5 @@
   border-radius: 50%;
   filter: blur(100px);
   pointer-events: none;
-  opacity: 0.15;
+  opacity: 0.18;
 }
