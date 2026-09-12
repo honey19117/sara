@@ -4,12 +4,13 @@
   "description": "Production-grade Luxury E-Commerce Platform with Express REST API, SQLite, Razorpay Checkout, and React/Tailwind frontend.",
   "type": "module",
   "scripts": {
-    "start": "cd server && npm start",
+    "start": "node server/src/index.js",
     "seed": "cd server && npm run seed",
     "server:dev": "cd server && npm run dev",
     "client:dev": "cd client && npm run dev",
     "client:build": "cd client && npm run build",
-    "build": "cd client && npm run build",
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "build": "npm --prefix server install && npm --prefix client install && npm --prefix client run build",
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\""
   },
   "keywords": ["ecommerce", "react", "razorpay", "express", "sqlite", "luxury", "production"],

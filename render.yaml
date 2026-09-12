@@ -1,0 +1,18 @@
+﻿services:
+  - type: web
+    name: aura-luxe-store
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: RAZORPAY_KEY_ID
+        value: rzp_test_Tb1PUNFWM6b7hV
+      - key: RAZORPAY_KEY_SECRET
+        value: nFE7zRhuwO6a4ljAmSZPguh4
+      - key: JWT_SECRET
+        generateValue: true
