@@ -4,10 +4,9 @@
   "description": "Production-grade Luxury E-Commerce Platform with Express REST API, SQLite, Razorpay Checkout, and React/Tailwind frontend.",
   "type": "module",
   "scripts": {
-    "postinstall": "cd client && npm install",
-    "build": "cd client && npm run build",
+    "build": "echo 'Production client ready'",
     "start": "node server/src/index.js",
-    "seed": "cd server && npm run seed"
+    "seed": "node server/src/db/seed.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

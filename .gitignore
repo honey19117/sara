@@ -12,7 +12,7 @@ yarn-error.log*
 .env.production.local
 
 # Build artifacts
-dist/
+!client/dist/
 build/
 
 # Database files
