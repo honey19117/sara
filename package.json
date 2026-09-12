@@ -9,9 +9,8 @@
     "server:dev": "cd server && npm run dev",
     "client:dev": "cd client && npm run dev",
     "client:build": "cd client && npm run build",
-    "install:all": "npm --prefix server install && npm --prefix client install",
-    "build": "npm --prefix server install && npm --prefix client install && npm --prefix client run build",
-    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\""
+    "build": "cd server && npm install && cd ../client && npm install && npm run build && cd ..",
+    "start": "node server/src/index.js"
   },
   "keywords": ["ecommerce", "react", "razorpay", "express", "sqlite", "luxury", "production"],
   "author": "AURA Luxe Engineering",

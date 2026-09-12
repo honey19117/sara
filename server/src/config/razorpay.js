@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const key_id = process.env.RAZORPAY_KEY_ID || 'rzp_test_placeholder';
-const key_secret = process.env.RAZORPAY_KEY_SECRET || 'test_secret_placeholder';
+const key_id = process.env.RAZORPAY_KEY_ID || 'rzp_test_Tb1PUNFWM6b7hV';
+const key_secret = process.env.RAZORPAY_KEY_SECRET || 'nFE7zRhuwO6a4ljAmSZPguh4';
 
 let razorpayInstance = null;
 try {
