@@ -18,18 +18,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Security & Headers
+// Security & Headers (Configured for seamless Razorpay Checkout)
 app.use(helmet({
   crossOriginResourcePolicy: false,
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://checkout.razorpay.com"],
-      frameSrc: ["'self'", "https://api.razorpay.com", "https://checkout.razorpay.com"],
-      connectSrc: ["'self'", "https://api.razorpay.com", "https://lumberjack.razorpay.com", "*"],
-      imgSrc: ["'self'", "data:", "https://images.unsplash.com", "*"]
-    }
-  }
+  crossOriginOpenerPolicy: false,
+  crossOriginEmbedderPolicy: false,
+  contentSecurityPolicy: false
 }));
 
 // CORS Configuration
