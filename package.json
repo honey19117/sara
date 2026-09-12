@@ -1,0 +1,18 @@
+{
+  "name": "aura-luxe-ecommerce",
+  "version": "1.0.0",
+  "description": "Production-grade Luxury E-Commerce Platform with Express REST API, SQLite, Razorpay Checkout, and React/Tailwind frontend.",
+  "type": "module",
+  "scripts": {
+    "start": "cd server && npm start",
+    "seed": "cd server && npm run seed",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "client:build": "cd client && npm run build",
+    "build": "cd client && npm run build",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\""
+  },
+  "keywords": ["ecommerce", "react", "razorpay", "express", "sqlite", "luxury", "production"],
+  "author": "AURA Luxe Engineering",
+  "license": "MIT"
+}

@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-aura-900 text-slate-100 font-sans min-h-screen overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.05) 0px, transparent 50%);
+  }
+
+  /* Custom luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0F17;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #232F46;
+    border-radius: 4px;
+    border: 2px solid #0B0F17;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply relative inline-flex items-center justify-center px-6 py-3 text-sm font-semibold tracking-wider text-black uppercase transition-all duration-300 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 rounded-lg shadow-lg hover:shadow-amber-500/20 hover:brightness-110 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-outline-gold {
+    @apply relative inline-flex items-center justify-center px-6 py-3 text-sm font-semibold tracking-wider text-amber-300 uppercase transition-all duration-300 border border-amber-500/40 rounded-lg hover:bg-amber-500/10 hover:border-amber-400 active:scale-[0.98] disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-slate-300 transition-colors rounded-lg hover:text-white hover:bg-white/5;
+  }
+
+  .glass-panel {
+    @apply bg-aura-850/80 backdrop-blur-md border border-slate-800/80 shadow-xl;
+  }
+
+  .glass-card {
+    @apply bg-aura-800/60 backdrop-blur-sm border border-slate-800/60 rounded-xl transition-all duration-300 hover:border-amber-500/40 hover:shadow-card-hover;
+  }
+
+  .gold-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500;
+  }
+
+  .badge-tag {
+    @apply px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider rounded-full;
+  }
+}
+
+/* Confetti container fix */
+canvas#confetti-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none !important;
+  z-index: 999999 !important;
+}
