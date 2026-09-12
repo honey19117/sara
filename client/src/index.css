@@ -4,24 +4,26 @@
 
 @layer base {
   body {
-    @apply bg-aura-900 text-slate-100 font-sans min-h-screen overflow-x-hidden;
+    @apply bg-[#070A0F] text-slate-100 font-sans min-h-screen overflow-x-hidden;
     background-image: 
-      radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.03) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.05) 0px, transparent 50%);
+      radial-gradient(at 15% 15%, rgba(212, 175, 55, 0.06) 0px, transparent 45%),
+      radial-gradient(at 85% 85%, rgba(180, 130, 40, 0.05) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(15, 23, 42, 0.4) 0px, transparent 100%);
+    background-attachment: fixed;
   }
 
   /* Custom luxury scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
   }
   ::-webkit-scrollbar-track {
-    background: #0B0F17;
+    background: #070A0F;
   }
   ::-webkit-scrollbar-thumb {
-    background: #232F46;
+    background: #1E293B;
     border-radius: 4px;
-    border: 2px solid #0B0F17;
+    border: 1px solid rgba(212, 175, 55, 0.2);
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #D4AF37;
@@ -29,42 +31,59 @@
 }
 
 @layer components {
+  /* Ultra-Aesthetic Gold Metallic Button with Shimmer */
   .btn-gold {
-    @apply relative inline-flex items-center justify-center px-6 py-3 text-sm font-semibold tracking-wider text-black uppercase transition-all duration-300 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 rounded-lg shadow-lg hover:shadow-amber-500/20 hover:brightness-110 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+    @apply relative inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold tracking-[0.15em] text-black uppercase transition-all duration-500 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37] bg-[length:200%_auto] rounded-xl shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:shadow-[0_0_35px_rgba(212,175,55,0.45)] hover:bg-[position:right_center] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
   }
 
   .btn-outline-gold {
-    @apply relative inline-flex items-center justify-center px-6 py-3 text-sm font-semibold tracking-wider text-amber-300 uppercase transition-all duration-300 border border-amber-500/40 rounded-lg hover:bg-amber-500/10 hover:border-amber-400 active:scale-[0.98] disabled:opacity-50;
+    @apply relative inline-flex items-center justify-center px-6 py-3.5 text-xs font-bold tracking-[0.15em] text-amber-300 uppercase transition-all duration-300 border border-amber-500/40 rounded-xl bg-amber-500/5 hover:bg-amber-500/15 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] active:scale-[0.98] disabled:opacity-50;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-slate-300 transition-colors rounded-lg hover:text-white hover:bg-white/5;
+    @apply inline-flex items-center justify-center px-4 py-2 text-xs font-medium text-slate-300 transition-colors rounded-xl hover:text-white hover:bg-white/5;
   }
 
+  /* Luxury Glassmorphism Panel */
   .glass-panel {
-    @apply bg-aura-850/80 backdrop-blur-md border border-slate-800/80 shadow-xl;
+    @apply bg-[#0D121D]/80 backdrop-blur-xl border border-slate-800/80 shadow-[0_20px_50px_rgba(0,0,0,0.6)];
+    box-shadow: 
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 20px 50px rgba(0, 0, 0, 0.6);
   }
 
+  /* Luxury Glassmorphism Card with Metallic Glow on Hover */
   .glass-card {
-    @apply bg-aura-800/60 backdrop-blur-sm border border-slate-800/60 rounded-xl transition-all duration-300 hover:border-amber-500/40 hover:shadow-card-hover;
+    @apply bg-[#0D121D]/70 backdrop-blur-md border border-slate-800/60 rounded-2xl transition-all duration-500;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+  .glass-card:hover {
+    @apply border-amber-500/50 -translate-y-1.5;
+    box-shadow: 
+      0 25px 45px -10px rgba(0, 0, 0, 0.7),
+      0 0 25px rgba(212, 175, 55, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
+  /* Liquid Gold Gradient Typography */
   .gold-gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FFF8DC] via-[#E5C07B] to-[#D4AF37];
+  }
+
+  .gold-border-glow {
+    border-image: linear-gradient(to right, rgba(212, 175, 55, 0.6), rgba(243, 229, 171, 0.3), rgba(212, 175, 55, 0.6)) 1;
   }
 
   .badge-tag {
-    @apply px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider rounded-full;
+    @apply px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full backdrop-blur-md;
   }
 }
 
-/* Confetti container fix */
-canvas#confetti-canvas {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  pointer-events: none !important;
-  z-index: 999999 !important;
+/* Ambient glow orb utility */
+.ambient-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.15;
 }

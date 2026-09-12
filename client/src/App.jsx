@@ -7,6 +7,7 @@ import { CartProvider } from './context/CartContext';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { CartDrawer } from './components/common/CartDrawer';
+import { CustomCursor } from './components/common/CustomCursor';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -49,6 +50,7 @@ export function App() {
         <WishlistProvider>
           <CartProvider>
             <Router>
+              <CustomCursor />
               <ScrollToTop />
               <div className="flex flex-col min-h-screen bg-aura-900 text-slate-100">
                 <Navbar />
