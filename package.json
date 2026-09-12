@@ -4,13 +4,23 @@
   "description": "Production-grade Luxury E-Commerce Platform with Express REST API, SQLite, Razorpay Checkout, and React/Tailwind frontend.",
   "type": "module",
   "scripts": {
+    "postinstall": "cd client && npm install",
+    "build": "cd client && npm run build",
     "start": "node server/src/index.js",
-    "seed": "cd server && npm run seed",
-    "server:dev": "cd server && npm run dev",
-    "client:dev": "cd client && npm run dev",
-    "client:build": "cd client && npm run build",
-    "build": "cd server && npm install && cd ../client && npm install && npm run build && cd ..",
-    "start": "node server/src/index.js"
+    "seed": "cd server && npm run seed"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "razorpay": "^2.9.5",
+    "sqlite3": "^5.1.7",
+    "uuid": "^11.1.0"
   },
   "keywords": ["ecommerce", "react", "razorpay", "express", "sqlite", "luxury", "production"],
   "author": "AURA Luxe Engineering",
