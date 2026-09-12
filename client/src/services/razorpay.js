@@ -43,9 +43,9 @@ export const openRazorpayCheckout = async ({
       image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=200&q=80',
       order_id: orderData.id,
       prefill: {
-        name: customerDetails.fullName,
-        email: customerDetails.email,
-        contact: customerDetails.phone
+        name: customerDetails.fullName || 'Connoisseur Client',
+        email: customerDetails.email || 'client@auraluxe.com',
+        contact: (customerDetails.phone || '').replace(/[^0-9+]/g, '') || '+919876543210'
       },
       notes: {
         shipping_city: shippingAddress.city,
